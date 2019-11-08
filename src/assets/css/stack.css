@@ -1,0 +1,402 @@
+@font-face {
+  font-family: myfont;
+  src: url(ff-clan-web-pro-thin.woff);
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  font-family: myfont, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.forquests .a {
+  color: #bd99f5;
+}
+
+a {
+  text-decoration: none;
+  color: #7f2aff;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #202020;
+  transition: 0.5s;
+}
+
+/*    ----    layout css for signup page  ----  */
+.container_main {
+  background-image: url(../images/bg.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.centercont {
+  width: 47%;
+  margin: 0 auto;
+  padding-top: 30px;
+  text-align: center;
+  height: 100vh;
+  background: #fbf9f966;
+  overflow: hidden;
+  box-shadow: 0 7px 50px rgba(0, 0, 0, 0.3);
+}
+.signup_box {
+  margin: 0 auto;
+  width: 70%;
+  text-align: center;
+}
+.introduction p {
+  color: #1d1d1d;
+  font-size: 17px;
+}
+
+/*    ----    css form  ----   */
+.form {
+  width: 317px;
+  margin: 47px auto;
+}
+.form .input-box {
+  margin: 20px 0;
+}
+.form .input-box input {
+  width: 100%;
+  font-size: 17px;
+  padding: 12px;
+  color: #777;
+  border: 1px solid #ccc;
+  outline: none;
+  box-sizing: border-box;
+}
+.form .input-box input:focus,
+.form .input-box input:valid {
+  border-bottom: 0.5px solid #7f2aff;
+  transition: 0.5s;
+}
+.form .input-box input[type='submit'] {
+  border: none;
+  background: #7f2aff;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: bold;
+}
+.form .input-box input[type='submit']:hover {
+  background: #1d1d1d;
+  transition: 0.5s;
+}
+
+/*    ----   layout css for login page  ----   */
+#contain {
+  background-image: url(../images/bg.jpg);
+  overflow: hidden;
+}
+.login_box {
+  margin: 80px auto;
+  width: 60%;
+  text-align: center;
+}
+.reminder p {
+  color: #fff;
+  font-size: 19px;
+}
+
+/*    ----   layout css for the homepage  ----   */
+#container_main {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-image: url(../images/bg.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/*    ----   layout css for the header  ----   */
+.head {
+  background-color: #fbf9f9b3;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  padding: 0;
+  margin: 0;
+  height: 77px;
+  width: 100%;
+  border-bottom: 1px solid #7f2aff;
+  position: fixed;
+}
+.navigation {
+  width: 70%;
+  margin: 0 auto;
+  padding: 0;
+}
+#nav_header {
+  position: fixed;
+  top: 0;
+  display: block;
+  transition: top 0.3s;
+}
+
+.logo {
+  float: left;
+  margin-top: 18px;
+}
+.profile {
+  float: right;
+  font-size: 15px;
+}
+
+/* ---- navigationbar layout ----   */
+ul {
+  height: 77px;
+  float: right;
+  margin: 0 70px;
+}
+ul li {
+  display: inline-table;
+  list-style-type: none;
+  margin: 0;
+}
+ul li a {
+  text-decoration: none;
+  font-size: 14px;
+  color: #1d1d1d;
+  display: block;
+  padding: 30px 10px;
+  width: 110px;
+  text-align: center;
+}
+ul li a:hover {
+  color: #fff;
+  background-color: #7f2aff;
+  transition: 0.5s;
+}
+
+/* ---- question card layout ----   */
+.containa {
+  background: url(../images/bg.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+}
+.question {
+  width: 65%;
+  margin: 100px auto 0;
+}
+.question .quest_card {
+  display: inline-table;
+}
+.quest_card {
+  background: #fff;
+  padding: 12px 20px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  margin: 10px;
+  width: 100%;
+}
+.quest-data {
+  padding-bottom: 5px;
+  margin-bottom: 0;
+  border-bottom: 1px solid #e3e3e3;
+}
+.quest-data a:hover {
+  color: #1d1d1d;
+  text-decoration: none;
+}
+.quest-title {
+  font-size: 20px;
+  margin: 20px 0;
+}
+.quest-title a:hover {
+  color: #1d1d1d;
+  text-decoration: none;
+}
+.quest-content {
+  color: #000;
+  font-size: 13px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #e3e3e3;
+}
+.quest-foot {
+  padding-bottom: 5px;
+  margin-bottom: 0;
+}
+.button {
+  border: none;
+  background: #7f2aff;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 12px;
+  padding: 12px;
+  outline: none;
+  box-sizing: border-box;
+}
+.tag {
+  border: none;
+  background: #e0e0e0;
+  border-radius: 25px;
+  color: #202020;
+  font-size: 12px;
+  padding: 12px;
+  margin: 0 0 0 7px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* ---- quest page css layout ----   */
+.delete {
+  float: right;
+  border: none;
+  background: red;
+  border-radius: 25px;
+  color: #fff;
+  font-size: 12px;
+  padding: 12px;
+  margin: 0 0 7px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* ---- layout css for the ask question page ----   */
+.contain {
+  background: url(../images/bg.jpg);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.quest_box {
+  margin: 120px auto;
+  text-align: center;
+  /*background:#fbf9f966;*/
+}
+#reminder {
+  margin-top: 100px;
+}
+.former {
+  width: 60%;
+  margin: 47px auto;
+}
+.former .input-box {
+  margin: 20px 0;
+}
+.former .input-box input,
+.former .input-box textarea {
+  width: 100%;
+  font-size: 17px;
+  padding: 12px;
+  color: #777;
+  border: 1px solid #ccc;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.former .input-box textarea {
+  height: 200px;
+}
+.former .input-box input:focus,
+.former .input-box input:valid {
+  border-bottom: 0.5px solid #7f2aff;
+  transition: 0.5s;
+}
+.former .input-box textarea:focus,
+.former .input-box textarea:valid {
+  border-bottom: 0.5px solid #7f2aff;
+}
+.former .input-box input[type='submit'] {
+  border: none;
+  background: #7f2aff;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: bold;
+}
+.former .input-box input[type='submit']:hover {
+  background: #1d1d1d;
+  transition: 0.5s;
+}
+
+/* ---- layout css for the profile page ----   */
+.profile_card {
+  padding: 20px;
+  padding-bottom: 50px;
+  margin: 70px auto;
+  margin-bottom: 100px;
+  width: 100%;
+}
+.profile_card .left {
+  float: left;
+  padding: 0;
+  text-align: center;
+  width: 45%;
+  height: 330px;
+  background-color: #7f2aff;
+}
+.profile_card .right {
+  float: right;
+  margin-top: -35px;
+  width: 45%;
+}
+.profile_name {
+  font-size: 50px;
+  color: #fff;
+}
+.cont_name {
+  font-size: 35px;
+  color: #fff;
+}
+.entries {
+  font-size: 20px;
+  font-style: italic;
+  color: #fff;
+}
+.holder {
+  border: none;
+  background: #e0e0e0;
+  color: #202020;
+  font-size: 14px;
+  margin: 0;
+  padding: 12px;
+  outline: none;
+  box-sizing: border-box;
+}
+.forquests {
+  font-size: 13px;
+  margin-left: 27px;
+}
+
+/* alert */
+#alert-2 {
+  display: none;
+}
+
+/* ---- footer layout ----   */
+footer {
+  float: none;
+  clear: both;
+  text-align: center;
+  padding-top: 27px;
+  background: #fbf9f966;
+}
+
+/*----start-responsive design-----*/
+@media (max-width: 1024px) {
+  .container_main {
+    margin: 0 0 0 3.6%;
+  }
+  .span_1_of_2 {
+    width: 47.7%;
+  }
+  .span_1_of_f {
+    width: 50%;
+  }
+  i.fb,
+  i.tw {
+    margin-right: 1em;
+  }
+  .main {
+    width: 50%;
+  }
+}
