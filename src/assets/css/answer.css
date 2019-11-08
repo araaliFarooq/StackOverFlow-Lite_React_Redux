@@ -1,0 +1,196 @@
+.question_answer{
+    width:65%;
+    margin: 100px auto 0;
+}
+.answer_card {
+    padding: 12px 20px 20px;
+    margin: 10px;
+    width:100%;
+    background:#fbf9f999;
+}
+
+#hr{
+    width: 60%;
+    color: #fff;
+}
+
+.ansd {
+    padding: 12px 20px;
+    margin: 10px;
+}
+
+.answer_card2 {
+    padding: 12px 20px;
+    margin: 10px;
+    width:100%;
+
+}
+.answer-data {
+    padding-bottom: 5px;
+    font-weight: bold;
+    font-size: 25px;
+    margin-bottom: 0;
+    color: #fff;
+}
+.answer-content {
+    color: #000;
+    font-size: 14px;
+    padding-bottom: 5px;
+    /* border-bottom: 1px solid #e3e3e3; */
+}
+.answer-foot {
+    padding-bottom:20px;
+    padding-top:15px;
+    border-top:1px solid #e3e3e3;
+}
+.vote{
+    color: #202020;
+    font-size: 18px;
+    float:right;
+    outline: none;
+    box-sizing: border-box;
+    width:100px;
+}
+#comment{
+    color: #1d1d1d;
+    font-size: 13px;
+    float:right;
+    margin-left:350px;
+    padding: 10px;
+    outline: none;
+    box-sizing: border-box;
+    width:270px;
+    border: none;
+}
+#comment em{
+    color: #7f2aff;
+}
+#quest_card {
+    background: #fff;
+    padding: 12px 20px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+#ans-foot {
+    padding-bottom: 5px;
+    margin-bottom: 0;
+    border-bottom:1px solid #e3e3e3;
+}
+#right{
+    float:right;
+}
+#left{
+    float:left;
+}
+.but{
+    border: none;
+    cursor: pointer;
+    background: #7f2aff;
+    border-radius:25px;
+    color: #fff;
+    margin:20px;
+    font-size: 12px;
+    padding: 12px;
+    outline: none;
+    box-sizing: border-box;
+    transition: 0.5s;
+}
+.active, .but:hover {
+    background-color: #1d1d1d;
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+
+
+.answering{
+    width: 100%;
+}
+.answering .input-box {
+    margin: 20px 0;
+}
+.answering .input-box input, .answering .input-box textarea {
+    width: 100%;
+    font-size: 17px;
+    padding: 12px;
+    color: #777;
+    border: 1px solid #ccc;
+    outline: none;
+    box-sizing: border-box;
+}
+.answering .input-box textarea {
+    height: 200px;
+}
+.answering .input-box input:focus,
+.answering .input-box input:valid {
+    border-bottom: 0.5px solid #7f2aff;
+    transition: 0.5s;
+}
+.answering .input-box textarea:focus,
+.answering .input-box textarea:valid {
+    border-bottom: 0.5px solid #7f2aff;
+}
+.answering .input-box input[type="submit"] {
+    border: none;
+    background: #7f2aff;
+    border-radius:25px;
+    color: #fff;
+    font-weight: bold;
+}
+.answering .input-box input[type="submit"]:hover {
+    background: #1d1d1d;
+    transition: 0.5s;
+}
+
+
+
+
+/*#comcard{
+    display:none;
+}*/
+
+
+
+
+/*---   css for the comment box   ---*/
+.forme{
+    width: 100%;
+    margin: 47px auto 25px;
+}
+.forme .input-box {
+    margin: 20px 0;
+}
+.forme .input-box input {
+    width: 100%;
+    font-size: 17px;
+    padding: 12px;
+    color: #777;
+    border: 1px solid #ccc;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #ccc;
+    box-sizing: border-box;
+}
+.forme .input-box input:focus,
+.forme .input-box input:valid {
+    border-bottom: 0.5px solid #7f2aff;
+    transition: 0.5s;
+}
+.forme .input-box input[type="submit"] {
+    border: none;
+    background: #7f2aff;
+    border-radius:25px;
+    width:20%;
+    color: #fff;
+    font-weight: bold;
+}
+.forme .input-box input[type="submit"]:hover {
+    background: #1d1d1d;
+    transition: 0.5s;
+}
