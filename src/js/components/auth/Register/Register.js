@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { registerUser } from '../../../actions/auth/Register';
 import RegisterForm from '../Register/RegisterForm';
-import '../../../../assets/css/answer.css';
-import '../../../../assets/css/stack.css';
+// import '../../../../assets/css/answer.css';
+// import '../../../../assets/css/stack.css';
 import logo from '../../../../assets/images/logo.png';
 
 class Register extends Component {

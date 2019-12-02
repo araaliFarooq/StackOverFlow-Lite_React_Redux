@@ -4,22 +4,25 @@ import configurations from '../../../config/index';
 
 const { API_URL } = configurations;
 
-export const signupFail = (data) => ({
-  type: actionTypes.SIGNUPFAIL,
+export const postQuestionFail = (data) => ({
+  type: actionTypes.POSTQUESTIONFAILURE,
   payload: data
 });
 
-export const signupSuccess = (response) => ({
-  type: actionTypes.SIGNUPSUCCESS,
+export const postQuestionSucess = (response) => ({
+  type: actionTypes.POSTQUESTIONSUCCESS,
   payload: response
 });
 
-export const registerUser = (data) => {
-  // const proxyurl = 'https://cors-anywhere.herokuapp.com/';
+const auth_object = localStorage.getItem('auth_details');
+const { token } = JSON.parse(auth_object);
+
+export const postQuestion = (data) => {
   return function(dispatch) {
-    fetch(`${API_URL}/users/register`, {
+    fetch(`${API_URL}/questions`, {
       method: 'POST',
       headers: {
+        Authorization: `Bearer ${token}`,
         'content-type': 'application/json'
       },
       CORS: 'no-cors',
@@ -27,10 +30,10 @@ export const registerUser = (data) => {
     })
       .then((res) => res.json())
       .then((response) => {
-        console.log('--->>', response);
+        console.log('response', response);
 
-        if (response.user) {
-          dispatch(signupSuccess(response.user));
+        if (response.success) {
+          dispatch(postQuestionSucess(response.user));
           toast.success(response.message, {
             position: 'top-center',
             autoClose: 9000,
@@ -46,7 +49,7 @@ export const registerUser = (data) => {
           //   'An activation link has been sent to your email.Follow the link to activate your account';
           // document.getElementById('reg_div').style.display = 'none';
         } else {
-          dispatch(signupFail(response.errors));
+          dispatch(postQuestionFail(response.message));
           toast.error(response.message, {
             position: 'top-center',
             autoClose: 9000,
@@ -57,6 +60,6 @@ export const registerUser = (data) => {
           });
         }
       })
-      .catch((response) => dispatch(signupFail(response.errors)));
+      .catch((response) => dispatch(postQuestionFail(response.errors)));
   };
 };

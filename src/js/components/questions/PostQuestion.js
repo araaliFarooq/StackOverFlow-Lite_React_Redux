@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { LoginUser } from '../../../actions/auth/Login';
-import LoginForm from '../Login/LoginForm';
-// import '../../../../assets/css/answer.css';
-// import '../../../../assets/css/stack.css';
-import logo from '../../../../assets/images/logo.png';
+import { postQuestion } from '../../actions/questions/PostQuestion';
+import QuestionForm from '../questions/QuestionForm';
+import Header from '../common/Header';
+import Footer from '../common/Footer';
 
-class Login extends Component {
+class PostQuestion extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
-      password: '',
+      title: '',
+      question: '',
+      tags: [],
       isLoginPending: false,
       errors: {}
     };
@@ -34,11 +34,12 @@ class Login extends Component {
   onSubmit = (e) => {
     e.preventDefault();
     const userData = {
-      username: this.state.username,
-      password: this.state.password
+      title: this.state.title,
+      qstnbody: this.state.question,
+      tags: this.state.tags.split(',')
     };
-    this.props.LoginUser(userData);
     console.log('obj->', userData);
+    this.props.postQuestion(userData);
   };
 
   render() {
@@ -46,51 +47,41 @@ class Login extends Component {
     const none = 'none';
     const block = 'block';
 
-    console.log('state-->>', this.state);
+    // console.log('state-->>', this.state);
     return (
-      <div className="container_main">
-        <div className="centercont">
-          <div className="signup_box">
-            <img src={logo} alt="" />
-            <div className="introduction">
-              <p>
-                Create an account and access all types of answers. <br />
-                If you have an account then <br />
-                <a href="loginpage.html">Login here</a>.
-              </p>
+      <div id="container_main">
+        <Header userId={'farooq'} />
+        <section className="contain">
+          <div className="quest_box">
+            <div id="reminder" className="reminder">
+              <p>Ask anything you want to know!.</p>
             </div>
-            <div className="form" action="homepage.html">
-              <LoginForm
+            <div className="former">
+              <QuestionForm
                 onSubmit={this.onSubmit}
                 onChange={this.onChange}
                 isLoginPending={this.state.isLoginPending}
                 errors={errors}
               />
-              <p></p>
-              <p>
-                <small>
-                  By signing up, you agree to the
-                  <a href="#">Terms and Conditions</a> here.
-                </small>
-              </p>
             </div>
           </div>
-        </div>
+        </section>
+        <Footer />
       </div>
     );
   }
 }
 
-Login.propTypes = {
+PostQuestion.propTypes = {
   onChange: PropTypes.func,
   onSubmit: PropTypes.func,
   errors: PropTypes.object,
   signUp: PropTypes.func,
-  isAuthenticated: PropTypes.bool,
-  isLoginPending: PropTypes.bool
+  isLoginPending: PropTypes.bool,
+  isAuthenticated: PropTypes.bool
 };
 
-Login.defaultProps = {
+PostQuestion.defaultProps = {
   isAuthenticated: false,
   isLoginPending: false
 };
@@ -104,7 +95,4 @@ const mapStateToProps = (state) => ({
 //   loginUser: (username, password) => dispatch(LoginUser(username, password))
 // });
 
-export default connect(
-  mapStateToProps,
-  { LoginUser }
-)(Login);
+export default connect(mapStateToProps, { postQuestion })(PostQuestion);
