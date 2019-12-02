@@ -1,6 +1,10 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { ToastContainer } from 'react-toastify';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './assets/css/stack.css';
+import './assets/css/answer.css';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import { Provider } from 'react-redux';
 import store from '../src/js/store';
 import App from './App';
@@ -9,6 +13,7 @@ import App from './App';
 // import App from "./js/components/App.jsx";
 render(
   <Provider store={store}>
+    <ToastContainer />
     <App />
   </Provider>,
   // The target element might be either root or app,

@@ -1,35 +1,28 @@
-import React from 'react';
-import '../src/assets/css/answer.css';
-import '../src/assets/css/stack.css';
-import { ToastContainer } from 'react-toastify';
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
 import Register from './js/components/auth/Register/Register';
 import Login from './js/components/auth/Login/Login';
+import PostQuestion from './js/components/questions/PostQuestion';
+import FetchQuestions from './js/components/questions/AllQuestions';
 
-function App() {
-  return (
-    // <div className="App">
-    //   <header className="App-header">
-    //     <img src={logo} className="App-logo" alt="logo" />
-    //     <p>
-    //       Edit <code>src/App.js</code> and save to reload.
-    //     </p>
-    //     <a
-    //       className="App-link"
-    //       href="https://reactjs.org"
-    //       target="_blank"
-    //       rel="noopener noreferrer"
-    //     >
-    //       Learn React
-    //     </a>
-    //   </header>
-    // </div>
-    <div>
-      <ToastContainer />
-      {/* <Register /> */}
-      <Login />
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+  render() {
+    return (
+      <Router>
+        <div className="App">
+          {/* <Route exact path="/" component={} /> */}
+          <Route path="/users/login" component={Login} />
+          <Route path="/users/register" component={Register} />
+          <Route path="/question" component={PostQuestion} />
+          <Route path="/questions" component={FetchQuestions} />
+        </div>
+      </Router>
+    );
+  }
 }
-
 export default App;

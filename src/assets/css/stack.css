@@ -162,9 +162,10 @@ ul li a {
   font-size: 14px;
   color: #1d1d1d;
   display: block;
-  padding: 30px 10px;
+  padding: 30px 6px;
   width: 110px;
   text-align: center;
+  height: 75px;
 }
 ul li a:hover {
   color: #fff;
@@ -195,6 +196,7 @@ ul li a:hover {
   border-radius: 3px;
   margin: 10px;
   width: 100%;
+  cursor: pointer;
 }
 .quest-data {
   padding-bottom: 5px;
@@ -223,6 +225,15 @@ ul li a:hover {
   padding-bottom: 5px;
   margin-bottom: 0;
 }
+
+.none {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
 .button {
   border: none;
   background: #7f2aff;

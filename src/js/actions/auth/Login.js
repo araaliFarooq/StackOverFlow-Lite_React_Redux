@@ -1,5 +1,8 @@
 import actionTypes from '../action-types';
 import { toast } from 'react-toastify';
+import configurations from '../../../config/index';
+
+const { API_URL } = configurations;
 
 export const loginFail = (data) => ({
   type: actionTypes.LOGINFAIL,
@@ -14,7 +17,7 @@ export const loginSuccess = (response) => ({
 export const LoginUser = (data) => {
   // const proxyurl = 'https://cors-anywhere.herokuapp.com/';
   return function(dispatch) {
-    fetch('http://127.0.0.1:8000/api/v1/users/login', {
+    fetch(`${API_URL}/users/login`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -26,8 +29,16 @@ export const LoginUser = (data) => {
       .then((response) => {
         console.log('--->>', response);
 
-        if (response.user) {
-          dispatch(loginSuccess(response.user));
+        if (response.success) {
+          const { token, data } = response;
+          const auth_object = { token: token, user: data };
+          console.log('auth--->>', auth_object);
+          localStorage.setItem('auth_details', JSON.stringify(auth_object));
+
+          dispatch(loginSuccess(data));
+
+          // window.location.href = '/';
+
           toast.success(response.message, {
             position: 'top-center',
             autoClose: 9000,
@@ -36,12 +47,6 @@ export const LoginUser = (data) => {
             pauseOnHover: true,
             draggable: true
           });
-
-          document.getElementById('reg-form').reset();
-          // document.getElementById('alert').style.display = 'block';
-          // document.getElementById('alert').innerHTML =
-          //   'An activation link has been sent to your email.Follow the link to activate your account';
-          // document.getElementById('reg_div').style.display = 'none';
         } else {
           dispatch(loginFail(response.errors));
           toast.error(response.message, {
